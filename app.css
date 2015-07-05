@@ -70,7 +70,7 @@ body, .side-bar, .content-bar, html { height: 100% !important; }
 .navbar-toggle { border: 0px; background-color: white !important; }
 .navbar-toggle:active, .navbar-toggle:hover { background-color: #C2EAF9 !important; }
 
-.btn:focus { border-top: 1px solid white; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white; outline: 0px auto -webkit-focus-ring-color !important; }
+.btn:focus { border-top: 1px solid white; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white; outline: 0 !important; }
 
 .btn-lightblue { background-color: #4FC1EE !important; color: #EDF7FD !important; font-weight: bold; }
 

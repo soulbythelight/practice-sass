@@ -151,7 +151,7 @@ body, html{
 
     &:focus{
         @include border(1px solid white);
-        outline: 0px auto -webkit-focus-ring-color !important;
+        outline: 0 !important;
     }
 }
 .btn-lightblue{
