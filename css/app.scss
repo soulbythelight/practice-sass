@@ -1,11 +1,19 @@
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
 $base-font-size: 16 !default;
+$cursive: 'Pacifico', cursive;
 
 @function em($px,$base: $base-font-size) {
     @return ($px / $base) * 1em;
 }
 @function multiple($first, $second) {
     @return ($first * $second);
+}
+@mixin cross($elem, $px) {
+    -moz-#{$elem}: $px;
+    -webkit-#{$elem}: $px;
+    -o-#{$elem}: $px;
+    -ms-#{$elem}: $px;
+    #{$elem} : $px;
 }
 @mixin margin($px){
     margin-top: $px !important;
@@ -20,10 +28,7 @@ $base-font-size: 16 !default;
     padding-right: $px !important;
 }
 @mixin border-radius($px){
-    border-radius: $px;
-    -webkit-border-radius: $px;
-    -moz-border-radius: $px;
-    -o-border-radius: $px;
+    @include cross(border-radius, $px);
 }
 
 @mixin border($px){
@@ -54,8 +59,6 @@ body, html{
 }
 .width-100 {
     width: 100%;
-    min-width: 100%;
-    max-width: 100%;
 }
 .side-bar{
     @extend body;
@@ -64,8 +67,6 @@ body, html{
     background-color: #273140;
     overflow: hidden;
     float: left;
-    top: 0;
-    left: 0;
 
     .sidebar-name {
         margin: 0;
@@ -84,7 +85,7 @@ body, html{
                 letter-spacing: em(2);
                 text-decoration: none;
                 color: #768C99 !important;
-                font-family: 'Pacifico', cursive;
+                font-family: $cursive;
                 color: #FFFFFF !important;
             }
         }
@@ -148,7 +149,6 @@ body, html{
     }
 }
 .btn {
-
     &:focus{
         @include border(1px solid white);
         outline: 0 !important;
