@@ -4,15 +4,30 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="bootstrap.css">
     <link rel="stylesheet" type="text/css" href="app.css">
+    <style type="text/css">
+    .sidebar-list li a {
+        position: relative;
+    }
+   .arrow {
+     width: 0;
+     height: 0;
+     border-top: 10px solid transparent;
+     border-bottom: 10px solid transparent;
+     border-left: 10px solid green;
+     position: absolute;
+     left: 0px;
+     display: none;
+    }
+    </style>
 </head>
 <body>
 <div class="side-bar">
-    <ul>
-        <li><a href="#" class="active">Senseney</a></li>
-        <li><a href="#">Dibben</a></li>
-        <li><a href="#">Thigpin</a></li>
-        <li><a href="#">Hincks</a></li>
-        <li><a href="#">Rumschlag</a></li>
+    <ul class="sidebar-list">
+        <li><a href="#" class="active"><span class="arrow"></span>Senseney</a></li>
+        <li><a href="#"><span class="arrow"></span>Dibben</a></li>
+        <li><a href="#"><span class="arrow"></span>Thigpin</a></li>
+        <li><a href="#"><span class="arrow"></span>Hincks</a></li>
+        <li><a href="#"><span class="arrow"></span>Rumschlag</a></li>
     </ul>
 </div>
 <div class="content-bar">

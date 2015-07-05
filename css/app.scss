@@ -40,9 +40,9 @@ body, html{
             width: 100%;
             .active {
                 background-color: #1A222F;
-                border-left: 5px solid blue;
+                // border-left: 5px solid blue;
             } 
-            :hover {
+            &:hover {
                 @extend .active;
                 color: #4FC1EE !important;
             }
@@ -55,6 +55,10 @@ body, html{
                 letter-spacing: em(1);
                 text-decoration: none;
                 color: #768C99 !important;
+
+                &:hover .arrow{
+                display: block;
+                }
               }
         }
     }
