@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
 $base-font-size: 16 !default;
 
 @function em($px,$base: $base-font-size) {
@@ -21,6 +22,11 @@ body, html{
     min-width: 100%;
     max-width: 100%;
 }
+.side-bar-collapsing{
+    -webkit-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
 .side-bar{
     @extend body;
     width: 250px  !important;
@@ -30,7 +36,30 @@ body, html{
     float: left;
     top: 0;
     left: 0;
-    ul {
+
+    .sidebar-name {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        > li {
+            display: inline-block;
+            width: 100%;
+            margin: 7px 0; 
+            > a {
+                text-align: center;
+                position: relative;
+                display: block;
+                padding: 15px 0px !important;
+                font-size: em(30);
+                letter-spacing: em(2);
+                text-decoration: none;
+                color: #768C99 !important;
+                font-family: 'Pacifico', cursive;
+                color: #FFFFFF !important;
+            }
+        }
+    }
+    .sidebar-list {
         margin: 0;
         padding: 0;
         list-style: none;
@@ -38,20 +67,17 @@ body, html{
             display: inline-block;
             border-bottom: 1px solid #1A222F;
             width: 100%;
-            .active {
+            .active, &:hover {
                 background-color: #1A222F;
-                // border-left: 5px solid blue;
-            } 
-            &:hover {
-                @extend .active;
                 color: #4FC1EE !important;
-            }
+            } 
             > a {
+                position: relative;
                 display: block;
                 padding: 15px 0px !important;
                 padding-left: 30px !important;
-                padding: 6px 12px;
                 font-size: em(15);
+                font-weight: bold;
                 letter-spacing: em(1);
                 text-decoration: none;
                 color: #768C99 !important;
@@ -59,12 +85,21 @@ body, html{
                 &:hover .arrow{
                 display: block;
                 }
+                > .arrow {
+                 width: 0;
+                 height: 0;
+                 border-top: 10px solid transparent;
+                 border-bottom: 10px solid transparent;
+                 border-left: 10px solid #4FC1EE;
+                 position: absolute;
+                 left: 0px;
+                 display: none;
+                }
               }
+            > .active .arrow {
+                display: block;
+            }
         }
-    }
-    .side-bar-bottom {
-        top: 80%;
-        position: relative;
     }
 }
 .content-bar {
