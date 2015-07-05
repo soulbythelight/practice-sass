@@ -28,9 +28,6 @@ $cursive: 'Pacifico', cursive;
     padding-bottom: $px !important;
     padding-right: $px !important;
 }
-@mixin border-radius($px){
-    @include cross(border-radius, $px);
-}
 
 @mixin border($px){
     border-top: $px;
@@ -168,7 +165,7 @@ body, html{
     font-weight: bold;
 }
 .btn-round{
-    @include border-radius(25px);
+    @include cross(border-radius, 25px);
 }
 
 @media (max-width: $screen-sm-min) { 
