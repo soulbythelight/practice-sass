@@ -22,11 +22,6 @@ body, html{
     min-width: 100%;
     max-width: 100%;
 }
-.side-bar-collapsing{
-    -webkit-transition: all .5s ease-out;
-    -o-transition: all .5s ease-out;
-    transition: all .5s ease-out;
-}
 .side-bar{
     @extend body;
     width: 250px  !important;
@@ -36,6 +31,10 @@ body, html{
     float: left;
     top: 0;
     left: 0;
+    -webkit-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+
 
     .sidebar-name {
         margin: 0;

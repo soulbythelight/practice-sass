@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="app.css">
 </head>
 <body>
-<div class="side-bar collapse navbar-ex1-collapse side-bar-collapsing">
+<div class="side-bar collapse navbar-ex1-collapse">
     <ul class="sidebar-name">
         <li><a href="#"><span style="color:#4FC1EE !important;">Fin</span>dash</a></li>
     </ul>
