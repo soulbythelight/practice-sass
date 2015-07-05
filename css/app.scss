@@ -6,16 +6,51 @@ $base-font-size: 16 !default;
 }
 @function multiple($first, $second) {
     @return ($first * $second);
-} 
+}
+@mixin margin($px){
+    margin-top: $px !important;
+    margin-left: $px !important;
+    margin-bottom: $px !important;
+    margin-right: $px !important;
+}
+@mixin padding($px){
+    padding-top: $px !important;
+    padding-left: $px !important;
+    padding-bottom: $px !important;
+    padding-right: $px !important;
+}
+@mixin border-radius($px){
+    border-radius: $px;
+    -webkit-border-radius: $px;
+    -moz-border-radius: $px;
+    -o-border-radius: $px;
+}
+
+@mixin border($px){
+    border-top: $px;
+    border-left: $px;
+    border-right: $px;
+    border-bottom: $px;
+}
 
 body, html{
     height: 100% !important;
 }
-@for $i from 0 through 10 {
-  .padding-#{$i} { padding-left:  multiple(1.5, $i)!important; padding-right: multiple(1.5, $i) !important; }
+.margin-reset{
+    margin: 0 0 !important;
+}
+.padding-reset{
+    padding: 0 0 !important;
 }
 @for $i from 0 through 10 {
-  .margin-#{$i} { margin-left:  multiple(1.5, $i)!important; margin-right: multiple(1.5, $i) !important; }
+  .padding-all-#{$i} { 
+    @include padding(multiple(1.5px, $i));
+    }
+}
+@for $i from 0 through 10 {
+  .margin-all-#{$i} { 
+    @include margin(multiple(1.5px, $i));
+    }
 }
 .width-100 {
     width: 100%;
@@ -31,10 +66,6 @@ body, html{
     float: left;
     top: 0;
     left: 0;
-    -webkit-transition: all .5s ease-out;
-    -o-transition: all .5s ease-out;
-    transition: all .5s ease-out;
-
 
     .sidebar-name {
         margin: 0;
@@ -104,4 +135,36 @@ body, html{
 .content-bar {
     overflow: hidden;
     @extend body;
+}
+
+.icon-bar {
+    background-color: #44BDEC !important;
+}
+.navbar-toggle{
+    border: 0px;
+    background-color:white !important;
+    &:active, &:hover{
+        background-color: #C2EAF9 !important;
+    }
+}
+.btn {
+
+    &:focus{
+        @include border(1px solid white);
+        outline: 0px auto -webkit-focus-ring-color !important;
+    }
+}
+.btn-lightblue{
+    background-color: #4FC1EE !important;
+    color: #EDF7FD !important;
+    font-weight: bold;
+}
+
+.btn-gray{
+    background-color: #EBF3FA !important;
+    color: #4F697A;
+    font-weight: bold;
+}
+.btn-round{
+    @include border-radius(25px);
 }
